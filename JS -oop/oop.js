@@ -115,19 +115,97 @@
 
 // Adding and removing properties
 
-function Circle(radius){  
-    this.radius = radius;
-    this.draw = function(){
-        console.log("draw");
-    }
+// function Circle(radius){  
+//     this.radius = radius;
+//     this.draw = function(){
+//         console.log("draw");
+//     }
     
-}
+// }
 
-const circle = new Circle(10);
+// const circle = new Circle(10);
 
-// Adding 
-circle.location = {x :1};
-const propertyName = 'location';
-circle[propertyName] = {x:1};
+// // Adding 
+// circle.location = {x :1};
+// const propertyName = 'location';
+// circle[propertyName] = {x:1};
+
+// delete circle['location'];
 
 // *********************************************************************************************
+
+
+// function Circle(radius){  
+//     this.radius = radius;
+//     this.draw = function(){
+//         console.log("draw");
+//     }
+    
+// }
+
+// const circle = new Circle(10);
+
+// for(let key in circle){
+//     if(typeof circle[key] !== 'function');
+//         console.log(key,circle[key]);
+// }
+
+// // for storing it in array use Object keyword
+
+// const keys = Object.keys(circle);
+// console.log(keys);
+
+// // to check existence of an property or an method we use in operator
+
+// if('radius' in circle){
+//     console.log("circle has an radius");
+// }
+
+
+// *************************************************************************************************
+
+// Abstraction  Private
+
+// ** when we use this it becomes an property 
+
+// instead of using this we can use let to become it private and local the function 
+
+// function Circle(radius){  
+//     this.radius = radius;
+
+//     let defaultLocation = {x:0 ,y:0};
+
+//     let computeOptimumLocation = function() {
+//         console.log('draw');
+//     };
+//     this.draw = function(){
+//         computeOptimumLocation();
+//         console.log("draw");
+//     }
+    
+// }
+
+// const circle = new Circle(10);
+// circle.draw();
+
+// **********************************************************************************
+
+// Getter functions to display private properties  
+
+function Circle(radius){  
+    this.radius = radius;
+    
+    let defaultLocation = {x:0 ,y:0};
+    
+    this.getDefaultLocation = function(){
+        return defaultLocation;
+    }
+    this.draw = function(){
+        computeOptimumLocation();
+        console.log("draw");
+    }
+        
+}
+
+const circle = new Circle(20);
+console.log(circle.getDefaultLocation());
