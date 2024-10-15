@@ -22,10 +22,11 @@
 
 // function createCircle(radius){
 //     return { // return indicates factory function
-//         radius, // new way of implementing/ assigning
-//         draw : function(){// since its aconstructor function it will print this also
+//         radius,
+//         draw : function(){
 //             console.log('draw');
 //         }
+
 //     }
 // }
 
@@ -41,10 +42,11 @@
 //     this.draw = function(){
 //         console.log("draw");
 //     }
+
 // }
 
 // const another = new CirCle(1);// imagine it creates new object in heap with different address to it
-// // if we forget to use new keyword it will assign to the global object
+// // if we forget to use new keyword it will assig to the global object
 // console.log(another);
 
 // *************************************************************************************************************************
@@ -118,7 +120,7 @@
 //     this.draw = function(){
 //         console.log("draw");
 //     }
-
+    
 // }
 
 // const circle = new Circle(10);
@@ -128,6 +130,7 @@
 // const propertyName = 'location';
 // circle[propertyName] = {x:1};
 
+// delete circle['location'];
 
 // *********************************************************************************************
 
